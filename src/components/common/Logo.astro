@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+import star from "@/assets/star.svg";
+---
+
+<a href="#" class="flex gap-2 items-center">
+    <Image src={star} alt="Star" class="w-7 h-7" />
+    <span class="font-hand text-xl text-neutral-900 pt-0.5">Aron</span>
+</a>
+<style>
+    span {
+        -webkit-text-stroke: 0.05em;
+        text-stroke: 0.05em;
+    }
+</style>
