@@ -1,0 +1,57 @@
+---
+import type { Experience } from '@/constants/data'
+import { cn } from '@/utils/class-name'
+
+interface Props extends Experience {
+	className?: string
+	isFirst?: boolean
+	index: number
+}
+
+const validColorsClasses: Record<number, string> = {
+	0: 'bg-pink-200',
+	1: 'bg-sky-200',
+	2: 'bg-amber-200'
+}
+
+const { company, description, position, rangeDate, className, isFirst, index } = Astro.props
+---
+
+<li>
+	<div class="relative">
+		<div
+			class={cn(
+				' flex flex-col sm:justify-center items-center gap-3 px-3 py-12 text-center sm:flex-row-reverse sm:text-left sm:gap-16 md:gap-20 md:px-10 md:py-14 lg:pl-28 lg:w-4/5 lg:ml-auto',
+				className
+			)}
+		>
+			<span
+				class={cn(
+					'absolute top-0 block   bg-white -translate-y-1/2 rounded border-2 border-black  p-3 shadow-sm shadow-neutral-900 lg:left-0 lg:top-1/2  lg:text-xl lg:p-5',
+					{
+						'bg-amber-200': isFirst
+					}
+				)}
+			>
+				{rangeDate}
+			</span>
+			<span
+				class={cn(
+					'flex h-14 min-w-14 items-center justify-center rounded-full ',
+					validColorsClasses[index]
+				)}
+			>
+				{index + 1}
+			</span>
+			<div class="flex flex-col gap-2">
+				<h3 class="text-xl text-neutral-900">
+					<span>{position}</span> en
+					<span class="font-bold">{company}</span>
+				</h3>
+				<p class="text-sm text-neutral-900">{description}</p>
+			</div>
+		</div>
+	</div>
+</li>
+
+<style></style>
