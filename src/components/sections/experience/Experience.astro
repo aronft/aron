@@ -1,0 +1,28 @@
+---
+import SectionLayout from '@/layouts/SectionLayout.astro'
+import { initialData } from '@/constants/data'
+import ExperienceItem from './ExperienceItem.astro'
+const data = initialData.experiences
+import { cn } from '@/utils/class-name'
+---
+
+<SectionLayout title="Work Experience" subtitle="Have designed morethan 20 projects">
+	<ol class="lg:ml-auto">
+		{
+			data.map((item, index) => (
+				<ExperienceItem
+					className={cn('border-x-4 border-neutral-900', {
+						'border-t-4  ': index !== 0,
+						'rounded-t-3xl border-t-4 ': index === 0,
+						'rounded-b-3xl border-b-4': index === data.length - 1
+					})}
+					{...item}
+					isFirst={index === 0}
+					index={index}
+				/>
+			))
+		}
+	</ol>
+</SectionLayout>
+
+<style></style>
