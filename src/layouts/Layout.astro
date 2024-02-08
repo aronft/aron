@@ -4,6 +4,7 @@ import '@/styles/global.css'
 
 import Footer from '@/components/common/Footer.astro'
 import Header from '@/components/common/Header.astro'
+import Container from './Container.astro'
 
 interface Props {
 	title: string
@@ -22,16 +23,16 @@ const { title } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="px-6">
-		<div
-			class="bg-red-50 container mx-auto min-h-[100dvh] max-w-6xl bg-pattern bg-cover bg-no-repeat px-5"
-		>
-			<Header />
-			<main class="pt-36">
-				<slot />
-			</main>
-			<Footer />
-		</div>
+	<body class="">
+		<Container className="min-h-[100dvh] ">
+			<div class="bg-pattern bg-cover bg-no-repeat pl-6">
+				<Header />
+				<main class="pt-36">
+					<slot />
+				</main>
+				<Footer />
+			</div>
+		</Container>
 		<style is:global>
 			body {
 				font-family: 'Inter';
