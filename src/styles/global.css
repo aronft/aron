@@ -42,7 +42,7 @@ h4 {
 }
 
 p {
-	tex-wrap: pretty;
+	text-wrap: pretty;
 }
 
 .text-stroke {
