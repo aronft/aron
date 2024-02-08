@@ -1,16 +1,18 @@
 ---
 import { Image } from 'astro:assets'
 import arrow from '@/assets/arrow.svg'
+import { cn } from '@/utils/class-name'
 
 type Props = {
 	title: string
 	subtitle: string
+	className?: string
 }
 
-const { title, subtitle } = Astro.props
+const { title, subtitle, className } = Astro.props
 ---
 
-<section>
+<section class={cn('', className)}>
 	<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand lg:text-4xl">{title}</h2>
 	<Image src={arrow} alt={'arrow'} class="mb-5 h-6 w-9 lg:h-16 lg:w-20" />
 	<p class="mb-8 lg:text-2xl">{subtitle}</p>

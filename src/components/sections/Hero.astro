@@ -1,14 +1,45 @@
 ---
-type Props = {}
+import { Image } from 'astro:assets'
 
-const {} = Astro.props
+import avatar from '@/assets/avatar.png'
+import arrow from '@/assets/arrow.svg?raw'
+import { cn } from '@/utils/class-name'
+
+type Props = {
+	className?: string
+}
+
+const { className } = Astro.props
 ---
 
-<section class="flex flex-col items-start gap-3">
-	<h1 class="text-3xl font-semibold">Frontend Developer</h1>
-	<p>I’ll design your website and will develop to land it on internet using No-code</p>
-
-	<a class="bg-black px-4 py-2 font-semibold text-white">Hire me</a>
+<section
+	class={cn('flex flex-col  md:flex-row gap-3 md:items-end md:gap-28 lg:gap-52 ', className)}
+>
+	<div>
+		<div class="flex origin-left -rotate-12 items-end gap-4">
+			<Image src={avatar} alt={'A man with glasses'} class={'w-14 h-14'} />
+			<div class="rotate-90">
+				<Fragment set:html={arrow} />
+			</div>
+			<p class="text-stroke inline-block bg-pink-200 font-hand text-xl">Aron</p>
+		</div>
+		<h1 class="text-3xl font-semibold md:text-6xl">Web Developer</h1>
+	</div>
+	<div class="flex flex-col items-start gap-4">
+		<p class="text-sm leading-relaxed text-gray-700 md:text-base lg:text-xl">
+			Enfocado en la creación de experiencias de usuario dinámicas usando<strong>
+				React, TypeScript, CSS y HTML
+			</strong>. Mi experiencia como Full-Stack me proporcionó una comprensión profunda de la
+			arquitectura web.
+		</p>
+		<a class="bg-black px-4 py-2 font-semibold text-white">Hire me</a>
+	</div>
 </section>
 
-<style></style>
+<style>
+	strong {
+	}
+	svg {
+		transform: rotate(45deg);
+	}
+</style>
