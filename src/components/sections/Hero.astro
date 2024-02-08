@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 
 import avatar from '@/assets/avatar.png'
 import arrow from '@/assets/arrow.svg?raw'
@@ -32,14 +33,12 @@ const { className } = Astro.props
 			</strong>. Mi experiencia como Full-Stack me proporcionó una comprensión profunda de la
 			arquitectura web.
 		</p>
-		<a class="bg-black px-4 py-2 font-semibold text-white">Hire me</a>
+		<div class="flex items-center gap-2 text-gray-500">
+			<Icon name="globe" class="h-5 w-5" />
+			<span class="text-sm">Moqueua - Perú</span>
+		</div>
+		<!-- <a class="bg-black px-4 py-2 font-semibold text-white">Hire me</a> -->
 	</div>
 </section>
 
-<style>
-	strong {
-	}
-	svg {
-		transform: rotate(45deg);
-	}
-</style>
+<style></style>
