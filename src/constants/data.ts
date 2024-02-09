@@ -6,8 +6,19 @@ export interface Experience {
 	description: string
 }
 
+export interface Project {
+	id: string
+	image: string
+	title: string
+	description: string
+	previewUrl: string
+	github?: string
+	tags: []
+}
+
 interface Data {
 	experiences: Experience[]
+	projects: Project[]
 }
 
 export const initialData: Data = {
@@ -35,6 +46,26 @@ export const initialData: Data = {
 			position: 'Full-stack Developer',
 			description:
 				'Participé activamente en el desarrollo de aplicaciones web administrativas, entre las cuales se destacan proyectos como CCTIC (Centro de Capacitación en TIC) y CEID (Centro de Idiomas)'
+		}
+	],
+	projects: [
+		{
+			id: crypto.randomUUID(),
+			title: 'Portfolio design',
+			description: 'UI design - User research -',
+			image: '/projects/bg.png',
+			previewUrl: '',
+			tags: [],
+			github: ''
+		},
+		{
+			id: crypto.randomUUID(),
+			title: 'Portfolio design',
+			description: 'UI design - User research -',
+			image: '/projects/bg.png',
+			previewUrl: '',
+			tags: [],
+			github: ''
 		}
 	]
 }

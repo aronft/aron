@@ -1,0 +1,29 @@
+---
+import Badge from '@/components/ui/badge/Badge.astro'
+import Line from '@/components/ui/Line.astro'
+import type { Project } from '@/constants/data'
+import line from '@/assets/line.png'
+import { Image } from 'astro:assets'
+import bgCard from '@/assets/bg-card.png'
+
+type Props = Project & {}
+
+const { image, title, description, previewUrl, github } = Astro.props
+---
+
+<article class="relative isolate mb-20 rounded border-4 border-neutral-900">
+	<div class="relative flex flex-col bg-white px-5 py-6">
+		<div class="mb-5 border-2 border-neutral-900 md:mb-8">
+			<img src={image} alt={title} class="aspect-square" />
+		</div>
+		<div class="mb-4">
+			<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>
+			<p class="text-sm text-neutral-600 md:text-xl">{description}</p>
+		</div>
+		<footer>
+			<Badge> Next.js </Badge>
+		</footer>
+	</div>
+</article>
+
+<style></style>

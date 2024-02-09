@@ -19,6 +19,9 @@ export default {
 			},
 			boxShadow: {
 				sm: '5px 5px 0px 0px rgba(0, 0, 0, 1)'
+			},
+			gridTemplateColumns: {
+				auto: 'repeat(auto-fill, minmax(min(100%, 25rem, 1fr))'
 			}
 		},
 		colors: {
