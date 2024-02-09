@@ -22,32 +22,36 @@ const {} = Astro.props
 
 <header class="fixed left-0 w-full">
 	<Container className="">
-		<div class="flex items-center justify-between pl-6 pt-11 lg:justify-end lg:gap-12">
+		<nav class="flex items-center justify-between py-11 pl-5 lg:justify-end lg:gap-12">
 			<Logo />
-			<nav>
-				<ul class="flex gap-6 text-neutral-900 md:text-2xl">
-					{
-						navItems.map((item) => (
-							<li>
-								<a href={item.url} class="" aria-label={item.label}>
-									{item.title}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
-		</div>
+			<ul class="flex gap-6 text-neutral-900 md:text-2xl">
+				{
+					navItems.map((item) => (
+						<li>
+							<a href={item.url} class="" aria-label={item.label}>
+								{item.title}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
 	</Container>
 </header>
 
 <style></style>
 
 <script>
+	const header = document.querySelector('header')
 	const sections = document.querySelectorAll('section')
 	const navItems = document.querySelectorAll('nav ul li a')
 	let currentSection = 'experience'
 	window.addEventListener('scroll', () => {
+		// if (window.scrollY >= 1) {
+		// 	header?.classList.add('bg-white')
+		// } else {
+		// 	header?.classList.remove('bg-white')
+		// }
 		sections.forEach((section) => {
 			if (window.scrollY >= section.offsetTop) {
 				currentSection = section.id
@@ -56,45 +60,8 @@ const {} = Astro.props
 
 		navItems.forEach((item) => {
 			if (item.getAttribute('aria-label') === currentSection) {
-				item.classList.add('text-pink-200')
+				item.classList.add('text-pink-700')
 			}
 		})
 	})
-	// document.addEventListener('astro:page-load', () => {
-	// 	const sections = document.querySelectorAll('section')
-	// 	const navItems = document.querySelectorAll('nav ul li a')
-	// 	console.log(sections)
-	// 	const callback: IntersectionObserverCallback = (entries, observer) => {
-	// 		console.log(entries)
-	// 		entries.forEach((entry) => {
-	// 			if (entry.isIntersecting) {
-	// 				navItems.forEach((item) => {
-	// 					if (item.getAttribute('aria-label') === entry.target.getAttribute('data-section')) {
-	// 						item.classList.add('text-pink-200')
-	// 					} else {
-	// 						item.classList.remove('text-pink-200')
-	// 					}
-	// 				})
-	// 			}
-	// 			// console.log(entry.target.getAttribute('data-section'))
-	// 		})
-	// 	}
-	// 	let observer = new IntersectionObserver(callback, {
-	// 		root: null,
-	// 		rootMargin: '0px',
-	// 		threshold: 0.3
-	// 	})
-	// 	sections.forEach((section) => {
-	// 		observer.observe(section)
-	// 	})
-	// 	document.onvisibilitychange = () => {
-	// 		if (document.visibilityState === 'hidden') {
-	// 			observer.disconnect()
-	// 		} else {
-	// 			sections.forEach((section) => {
-	// 				observer.observe(section)
-	// 			})
-	// 		}
-	// 	}
-	// })
 </script>

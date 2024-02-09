@@ -27,18 +27,21 @@ const { className } = Astro.props
 			</p>
 		</div>
 		<h1 class="text-3xl font-semibold text-neutral-900 md:text-6xl">
-			Web <span class="relative inline-block">
+			Full-Stack <span class="relative inline-block">
 				<span class="display-block absolute bottom-0 h-5 w-full bg-pink-200"></span>
 				<span class="relative">Developer</span>
 			</span>
 		</h1>
 	</div>
-	<div class="flex flex-col items-start gap-4">
+	<div class="flex flex-col items-start">
 		<p class="text-sm text-neutral-800 md:text-base lg:text-xl">
 			Enfocado en la creación de experiencias de usuario dinámicas usando<strong>
-				React, TypeScript, CSS y HTML
-			</strong>. Mi experiencia como Full-Stack me proporcionó una comprensión profunda de la
-			arquitectura web.
+				React, TypeScript, CSS, HTML y Node.js
+			</strong>.
+		</p>
+		<p class="mb-4 text-sm text-neutral-800 md:text-base lg:text-xl">
+			Mi experiencia como <strong>Full-Stack</strong> me proporcionó una comprensión profunda de la arquitectura
+			web.
 		</p>
 		<div class="flex items-center gap-2 text-neutral-600">
 			<Icon name="globe" class="h-5 w-5" />
@@ -48,4 +51,8 @@ const { className } = Astro.props
 	</div>
 </section>
 
-<style></style>
+<style>
+	strong {
+		@apply text-pink-700;
+	}
+</style>

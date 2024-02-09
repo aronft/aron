@@ -18,7 +18,7 @@ const { title, subtitle, className, id } = Astro.props
 	<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand lg:text-4xl lg:leading-relaxed">
 		{title}
 	</h2>
-	<Icon name="arrow" class="mb-5 h-6 w-9 md:h-20 md:w-20" />
+	<Icon name="arrow" class="mb-5 h-6 w-9 md:h-20 md:w-20" aria-label={'arrow down'} />
 	<p class="mb-8 max-w-44 md:max-w-none lg:text-2xl">{subtitle}</p>
 	<slot />
 </section>
