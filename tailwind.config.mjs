@@ -14,9 +14,7 @@ export default {
 				'2xl': ['1.563rem', '1.625'],
 				'3xl': ['1.953rem', '1.625']
 			},
-			backgroundImage: {
-				pattern: "url('./src/assets/bg-patterns.png')"
-			},
+			backgroundImage: {},
 			boxShadow: {
 				sm: '5px 5px 0px 0px rgba(0, 0, 0, 1)'
 			},
@@ -63,6 +61,9 @@ export default {
 			},
 			sky: {
 				200: '#9DDCFF'
+			},
+			green: {
+				300: '#79f279'
 			}
 		}
 	},

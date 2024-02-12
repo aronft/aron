@@ -1,11 +1,18 @@
 ---
 import { cn } from '@/utils/class-name'
-type Props = {}
+type Props = {
+	className?: string
+}
 
-const {} = Astro.props
+const { className } = Astro.props
 ---
 
-<span class={cn('border-2 rounded border-neutral-900 shadow-sm  bg-pink-200 px-3 py-1')}>
+<span
+	class={cn(
+		'text-xs border-2 rounded border-neutral-900 shadow-sm  bg-pink-200 px-3 py-0.5 flex gap-1 items-center',
+		className
+	)}
+>
 	<slot />
 </span>
 

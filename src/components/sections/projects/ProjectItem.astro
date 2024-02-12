@@ -5,25 +5,40 @@ import type { Project } from '@/constants/data'
 import line from '@/assets/line.png'
 import { Image } from 'astro:assets'
 import bgCard from '@/assets/bg-card.png'
+import { Icon } from 'astro-icon/components'
 
 type Props = Project & {}
 
-const { image, title, description, previewUrl, github } = Astro.props
+const { image, title, description, previewUrl, github, tags } = Astro.props
 ---
 
-<article class="relative isolate mb-20 rounded border-4 border-neutral-900">
+<article class="relative isolate rounded-md border-4 border-neutral-900">
 	<div class="relative flex flex-col bg-white px-5 py-6">
-		<div class="mb-5 border-2 border-neutral-900 md:mb-8">
-			<img src={image} alt={title} class="aspect-square" />
+		<div class="mb-4 overflow-hidden rounded md:mb-5 md:max-h-56">
+			<img src={image} alt={title} class="aspect-square object-cover" />
 		</div>
 		<div class="mb-4">
 			<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>
-			<p class="text-sm text-neutral-600 md:text-xl">{description}</p>
+			<p class="text-sm text-neutral-600 md:text-lg">{description}</p>
 		</div>
-		<footer>
-			<Badge> Next.js </Badge>
+		<footer class="flex flex-wrap gap-3">
+			{
+				tags.map((tag) => (
+					<Badge className={tag.className}>
+						<Icon name={tag.icon} /> {tag.name}
+					</Badge>
+				))
+			}
 		</footer>
 	</div>
 </article>
 
-<style></style>
+<style>
+	article img {
+		transition: transform 500ms;
+	}
+
+	article:hover img {
+		transform: scale(1.1);
+	}
+</style>

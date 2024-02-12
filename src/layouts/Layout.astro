@@ -25,7 +25,7 @@ const { title } = Astro.props
 	</head>
 	<body class="">
 		<Container className="min-h-[100dvh] ">
-			<div class="bg-pattern bg-cover bg-no-repeat pl-6">
+			<div class="-[3px] border-l border-neutral-900 bg-pattern bg-cover bg-no-repeat pl-6">
 				<Header />
 				<main class="pt-36">
 					<slot />
@@ -36,6 +36,14 @@ const { title } = Astro.props
 		<style is:global>
 			body {
 				font-family: 'Inter';
+			}
+			.bg-pattern {
+				background: radial-gradient(circle, #b3b3b3 10%, transparent 11%);
+				background-color: rgba(0, 0, 0, 0);
+				background-size: auto;
+				background-size: 1em 1em;
+				background-color: #ffffff;
+				opacity: 1;
 			}
 		</style>
 	</body>
