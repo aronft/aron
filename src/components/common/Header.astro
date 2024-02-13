@@ -1,6 +1,7 @@
 ---
 import Container from '@/layouts/Container.astro'
 import Logo from './Logo.astro'
+import ToggleTheme from '@/components/toggle-theme/ToggleTheme.astro'
 
 const navItems = [
 	{
@@ -20,21 +21,24 @@ type Props = {}
 const {} = Astro.props
 ---
 
-<header class="fixed left-0 w-full">
+<header class="fixed left-0 z-10 w-full">
 	<Container className="">
-		<nav class="flex items-center justify-between py-11 pl-5 lg:justify-end lg:gap-12">
+		<nav class="flex items-center justify-between py-5 pl-5 lg:justify-end lg:gap-12">
 			<Logo />
-			<ul class="flex gap-6 text-neutral-900 md:text-2xl">
-				{
-					navItems.map((item) => (
-						<li>
-							<a href={item.url} class="" aria-label={item.label}>
-								{item.title}
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			<div class="flex items-center gap-5">
+				<ul class="flex gap-6 text-neutral-900 md:text-2xl">
+					{
+						navItems.map((item) => (
+							<li>
+								<a href={item.url} class="" aria-label={item.label}>
+									{item.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+				<ToggleTheme />
+			</div>
 		</nav>
 	</Container>
 </header>
@@ -47,11 +51,11 @@ const {} = Astro.props
 	const navItems = document.querySelectorAll('nav ul li a')
 	let currentSection = 'experience'
 	window.addEventListener('scroll', () => {
-		// if (window.scrollY >= 1) {
-		// 	header?.classList.add('bg-white')
-		// } else {
-		// 	header?.classList.remove('bg-white')
-		// }
+		if (window.scrollY >= 1) {
+			header?.classList.add('bg-white', 'border-b', 'dark:bg-black')
+		} else {
+			header?.classList.remove('bg-white', 'border-b', 'bg-black')
+		}
 		sections.forEach((section) => {
 			if (window.scrollY >= section.offsetTop) {
 				currentSection = section.id
@@ -59,6 +63,7 @@ const {} = Astro.props
 		})
 
 		navItems.forEach((item) => {
+			item.classList.remove('text-pink-700')
 			if (item.getAttribute('aria-label') === currentSection) {
 				item.classList.add('text-pink-700')
 			}

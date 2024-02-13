@@ -12,8 +12,8 @@ type Props = Project & {}
 const { image, title, description, previewUrl, github, tags } = Astro.props
 ---
 
-<article class="relative isolate rounded-md border-4 border-neutral-900">
-	<div class="relative flex flex-col bg-white px-5 py-6">
+<article class="relative isolate rounded-md border-4 border-neutral-900 bg-white">
+	<div class="relative flex flex-col px-5 py-6">
 		<div class="mb-4 overflow-hidden rounded md:mb-5 md:max-h-56">
 			<img src={image} alt={title} class="aspect-square object-cover" />
 		</div>

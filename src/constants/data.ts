@@ -106,7 +106,7 @@ export const initialData: Data = {
 			id: crypto.randomUUID(),
 			title: 'Sistema de Gestión dantol-gym',
 			description:
-				'Plataforma completa para administrar clientes, inscripciones, resevras y rutinas de entrenamiento. Simplificando su gestión y optimizando su rendimiento.',
+				'Plataforma completa para administrar clientes, inscripciones, reservas y rutinas de entrenamiento. Simplificando su gestión y optimizando su rendimiento.',
 			image: '/projects/dantol-gym.png',
 			previewUrl: '',
 			tags: [TAGS.ANGULAR, TAGS.CSS, TAGS.HTML, TAGS.SASS, TAGS.MYSQL, TAGS.TYPESCRIPT],
@@ -116,7 +116,7 @@ export const initialData: Data = {
 			id: crypto.randomUUID(),
 			title: 'Sistema de Gestión Académica - CEID',
 			description:
-				'Plataforma para gestionar eficientemente la administración académica de idiomas, facilitando inscripciones, evaluaciones, asistencias, certificados, ficilitando el seguimiento del desarrollo académico',
+				'Plataforma para gestionar eficientemente la administración académica de idiomas, facilitando inscripciones, evaluaciones, asistencias, certificados, facilitando el seguimiento del desarrollo académico.',
 			image: '/projects/ceid.png',
 			previewUrl: '',
 			tags: [
