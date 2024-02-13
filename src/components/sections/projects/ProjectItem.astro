@@ -1,21 +1,17 @@
 ---
 import Badge from '@/components/ui/badge/Badge.astro'
-import Line from '@/components/ui/Line.astro'
 import type { Project } from '@/constants/data'
-import line from '@/assets/line.png'
-import { Image } from 'astro:assets'
-import bgCard from '@/assets/bg-card.png'
 import { Icon } from 'astro-icon/components'
 
 type Props = Project & {}
 
-const { image, title, description, previewUrl, github, tags } = Astro.props
+const { image, title, description, tags } = Astro.props
 ---
 
 <article class="relative isolate rounded-md border-4 border-neutral-900 bg-white">
 	<div class="relative flex flex-col px-5 py-6">
 		<div class="mb-4 overflow-hidden rounded md:mb-5 md:max-h-56">
-			<img src={image} alt={title} class="aspect-square object-cover" />
+			<img src={image} alt={title} class="object-cover" loading="lazy" />
 		</div>
 		<div class="mb-4">
 			<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>

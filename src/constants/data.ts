@@ -107,7 +107,7 @@ export const initialData: Data = {
 			title: 'Sistema de Gestión dantol-gym',
 			description:
 				'Plataforma completa para administrar clientes, inscripciones, reservas y rutinas de entrenamiento. Simplificando su gestión y optimizando su rendimiento.',
-			image: '/projects/dantol-gym.png',
+			image: '/projects/dantol-gym.jpg',
 			previewUrl: '',
 			tags: [TAGS.ANGULAR, TAGS.CSS, TAGS.HTML, TAGS.SASS, TAGS.MYSQL, TAGS.TYPESCRIPT],
 			github: ''
@@ -117,7 +117,7 @@ export const initialData: Data = {
 			title: 'Sistema de Gestión Académica - CEID',
 			description:
 				'Plataforma para gestionar eficientemente la administración académica de idiomas, facilitando inscripciones, evaluaciones, asistencias, certificados, facilitando el seguimiento del desarrollo académico.',
-			image: '/projects/ceid.png',
+			image: '/projects/ceid.jpg',
 			previewUrl: '',
 			tags: [
 				TAGS.ANGULAR,
@@ -135,7 +135,7 @@ export const initialData: Data = {
 			title: 'Sistema de Gestión Académica - CCTIC',
 			description:
 				'Software para la gestión académica en el Centro de Capacitación en TIC, simplificando las inscripciones, monitoreo del avance y generacion de certificados y gestión de planes académicos.',
-			image: '/projects/cctic.png',
+			image: '/projects/cctic.jpg',
 			previewUrl: '',
 			tags: [
 				TAGS.ANGULAR,

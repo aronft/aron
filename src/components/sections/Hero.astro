@@ -2,8 +2,9 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import avatar from '@/assets/avatar.png'
+import avatar from '@/assets/avatar.webp'
 import { cn } from '@/utils/class-name'
+import Badge from '../ui/badge/Badge.astro'
 
 type Props = {
 	className?: string
@@ -15,10 +16,17 @@ const { className } = Astro.props
 <section
 	class={cn('flex flex-col  md:flex-row gap-3 md:items-end md:gap-28 lg:gap-52 ', className)}
 	data-section="hero"
+	id="hero"
 >
 	<div>
 		<div class="flex origin-left -rotate-12 items-center gap-5">
-			<Image src={avatar} alt={'A man with glasses'} class={'w-14 h-14 md:w-28 md:h-28'} />
+			<Image
+				src={avatar}
+				width={150}
+				height={150}
+				alt={'A man with glasses'}
+				class={'w-14 h-14 md:w-28 md:h-28'}
+			/>
 			<Icon name="arrow" class="mt-auto h-9 w-9 rotate-90 md:h-20 md:w-20" />
 			<p
 				class="text-stroke inline-block bg-pink-200 font-hand text-xl md:text-3xl md:leading-relaxed"
@@ -34,17 +42,36 @@ const { className } = Astro.props
 			</span>
 		</h1>
 	</div>
-	<div class="flex flex-col items-start">
+	<div class="flex flex-col items-start gap-3">
 		<p class="text-sm text-neutral-800 md:text-base lg:text-xl">
 			Gracias a mi experiencia como <strong>Full-Stack</strong>, he desarrollado un sólido
 			entendimiento de la arquitectura web, centrándome en la creación de experiencias de usuario
 			dinámicas mediante tecnologías como <strong> React, TypeScript, CSS, HTML y Node.js </strong>.
 		</p>
 
-		<div class="flex items-center gap-2 text-neutral-600">
-			<Icon name="globe" class="h-5 w-5" />
-			<span class="text-sm">Moqueua - Perú</span>
-		</div>
+		<footer class="flex w-full flex-wrap justify-between gap-3">
+			<div class="flex flex-wrap gap-3">
+				<a href="mailto:aronflores.jobs@gmail.com" target="_blank" rel="noopener noreferrer">
+					<Badge className="hover:bg-pink-400 hover:text-white">
+						<Icon name="mail" class={'text-base'} /> Contáctame
+					</Badge>
+				</a>
+				<a href="https://github.com/aronft" target="_blank" rel="noopener noreferrer">
+					<Badge className="hover:bg-pink-400 hover:text-white">
+						<Icon name="github" class={'text-md'} /> Github
+					</Badge>
+				</a>
+				<a href="https://www.linkedin.com/in/aronft/" target="_blank" rel="noopener noreferrer">
+					<Badge className="hover:bg-pink-400 hover:text-white">
+						<Icon name="linkedin" class={''} /> Linkedin
+					</Badge>
+				</a>
+			</div>
+			<div class="flex items-center gap-2 text-neutral-600">
+				<Icon name="globe" class="h-5 w-5" />
+				<span class="text-sm">Moqueua - Perú</span>
+			</div>
+		</footer>
 		<!-- <a class="bg-black px-4 py-2 font-semibold text-white">Hire me</a> -->
 	</div>
 </section>
