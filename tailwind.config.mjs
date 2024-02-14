@@ -21,6 +21,9 @@ export default {
 			},
 			gridTemplateColumns: {
 				auto: 'repeat(auto-fill, minmax(min(100%, 25rem, 1fr))'
+			},
+			borderWidth: {
+				3: '3px'
 			}
 		},
 		colors: {

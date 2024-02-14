@@ -15,16 +15,16 @@ const {} = Astro.props
 	data-section="projects"
 	class="mb-20 flex flex-col gap-3 lg:flex-row lg:justify-between lg:gap-16"
 >
-	<div class="flex flex-col items-start lg:items-end lg:pt-28">
-		<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand lg:text-4xl lg:leading-relaxed">
+	<header class="flex flex-row-reverse items-start gap-5 lg:flex-col lg:items-end lg:pt-28">
+		<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand md:text-4xl lg:leading-relaxed">
 			Proyectos
 		</h2>
 		<Icon
 			name="arrow"
-			class="mb-5 h-6 w-9 md:h-20 md:w-20 lg:-rotate-45"
+			class="mb-5 h-6 w-9 translate-y-2 rotate-45 md:h-20 md:w-20 md:translate-y-0 lg:-rotate-45"
 			aria-label={'arrow down'}
 		/>
-	</div>
+	</header>
 	<ul class="grid gap-5">
 		{projects.map((project) => <ProjectItem {...project} />)}
 	</ul>

@@ -8,16 +8,17 @@ import Container from './Container.astro'
 
 interface Props {
 	title: string
+	description: string
 }
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -25,7 +26,7 @@ const { title } = Astro.props
 	</head>
 	<body class="">
 		<Container className="min-h-[100dvh] ">
-			<div class="-[3px] bg-pattern border-l border-neutral-900 bg-cover bg-no-repeat pl-6">
+			<div class="bg-pattern border-x-3 border-neutral-900 bg-cover bg-no-repeat px-6">
 				<Header />
 				<main class="">
 					<slot />
@@ -38,7 +39,7 @@ const { title } = Astro.props
 				font-family: 'Inter';
 			}
 			.bg-pattern {
-				background: radial-gradient(circle, #b3b3b3 10%, transparent 11%);
+				background: radial-gradient(circle, #e8e8e8 10%, transparent 11%);
 				background-color: rgba(0, 0, 0, 0);
 				background-size: auto;
 				background-size: 1em 1em;

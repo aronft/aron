@@ -4,14 +4,27 @@ import { initialData } from '@/constants/data'
 import ExperienceItem from './ExperienceItem.astro'
 const data = initialData.experiences
 import { cn } from '@/utils/class-name'
+import { Icon } from 'astro-icon/components'
 ---
 
-<SectionLayout
-	title="Trayecto Laboral"
-	subtitle="2 años de Experiencia"
-	className="mb-36"
-	id="experience"
->
+<SectionLayout className="mb-36 " id="experience">
+	<header
+		class="mb-12 flex flex-row-reverse items-center justify-start gap-3 md:mb-20 md:gap-14 lg:justify-center"
+	>
+		<h2
+			class="text-stroke mb-3 inline-block max-w-min rotate-12 bg-pink-200 font-hand sm:max-w-none md:text-4xl lg:leading-relaxed"
+		>
+			Trayecto Laboral
+		</h2>
+		<Icon
+			name="arrow"
+			class="mb-5 h-6 w-9 translate-y-1/2 rotate-45 md:h-20 md:w-20"
+			aria-label={'arrow down'}
+		/>
+		<p class="mb-8 mt-auto max-w-44 translate-y-8 md:max-w-none md:translate-y-16 md:text-2xl">
+			2 años de Experiencia
+		</p>
+	</header>
 	<ol class="lg:ml-auto">
 		{
 			data.map((item, index) => (
