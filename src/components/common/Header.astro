@@ -53,18 +53,14 @@ const {} = Astro.props
 	const navItems = document.querySelectorAll('nav ul li a')
 	let currentSection = 'experience'
 
-	if (window.scrollY >= 1) {
-		header?.classList.add('bg-white', 'border-b')
-	}
-
-	window.addEventListener('scroll', () => {
+	const handleScroll = () => {
 		if (window.scrollY >= 1) {
 			header?.classList.add('bg-white', 'border-b')
 		} else {
 			header?.classList.remove('bg-white', 'border-b', 'bg-black')
 		}
 		sections.forEach((section) => {
-			if (window.scrollY >= section.offsetTop) {
+			if (window.scrollY >= section.offsetTop - 80) {
 				currentSection = section.id
 			}
 		})
@@ -75,5 +71,7 @@ const {} = Astro.props
 				item.classList.add('text-pink-700')
 			}
 		})
-	})
+	}
+	handleScroll()
+	window.addEventListener('scroll', handleScroll)
 </script>
