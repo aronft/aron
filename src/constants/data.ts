@@ -12,7 +12,7 @@ type TAG = {
 	className?: string
 }
 
-const TAGS: Record<string, TAG> = {
+const TAGS = {
 	ANGULAR: {
 		name: 'Angular',
 		icon: 'angular'
@@ -56,6 +56,18 @@ const TAGS: Record<string, TAG> = {
 	TYPESCRIPT: {
 		name: 'TypeScript',
 		icon: 'typescript'
+	},
+	NEXT: {
+		name: 'Next.js',
+		icon: 'nextjs'
+	},
+	REACT: {
+		name: 'React',
+		icon: 'react'
+	},
+	TAILWINDCSS: {
+		name: 'TailwindCSS',
+		icon: 'tailwindcss'
 	}
 }
 
@@ -104,12 +116,22 @@ export const initialData: Data = {
 	projects: [
 		{
 			id: crypto.randomUUID(),
+			title: 'Generador de posts',
+			description:
+				'Herramienta que hace que la creación de posts sea más sencilla y efectiva. Usando IA',
+			image: '/projects/post-generator.webp',
+			previewUrl: 'https://ia-post-generator.vercel.app',
+			tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS],
+			github: 'https://github.com/aronft/ia-post-generator'
+		},
+		{
+			id: crypto.randomUUID(),
 			title: 'Sistema de Gestión dantol-gym',
 			description:
 				'Plataforma completa para administrar clientes, inscripciones, reservas y rutinas de entrenamiento. Simplificando su gestión y optimizando su rendimiento.',
 			image: '/projects/dantol-gym.jpg',
 			previewUrl: '',
-			tags: [TAGS.ANGULAR, TAGS.CSS, TAGS.HTML, TAGS.SASS, TAGS.MYSQL, TAGS.TYPESCRIPT],
+			tags: [TAGS.ANGULAR, TAGS.LARAVEL, TAGS.SASS, TAGS.MYSQL, TAGS.TYPESCRIPT],
 			github: ''
 		},
 		{
@@ -119,15 +141,7 @@ export const initialData: Data = {
 				'Plataforma para gestionar eficientemente la administración académica de idiomas, facilitando inscripciones, evaluaciones, asistencias, certificados, facilitando el seguimiento del desarrollo académico.',
 			image: '/projects/ceid.jpg',
 			previewUrl: '',
-			tags: [
-				TAGS.ANGULAR,
-				TAGS.HTML,
-				TAGS.SASS,
-				TAGS.GIT,
-				TAGS.SQLSERVER,
-				TAGS.TYPESCRIPT,
-				TAGS.LARAVEL
-			],
+			tags: [TAGS.ANGULAR, TAGS.SASS, TAGS.GIT, TAGS.SQLSERVER, TAGS.TYPESCRIPT, TAGS.LARAVEL],
 			github: ''
 		},
 		{
@@ -137,15 +151,7 @@ export const initialData: Data = {
 				'Software para la gestión académica en el Centro de Capacitación en TIC, simplificando las inscripciones, monitoreo del avance y generacion de certificados y gestión de planes académicos.',
 			image: '/projects/cctic.jpg',
 			previewUrl: '',
-			tags: [
-				TAGS.ANGULAR,
-				TAGS.HTML,
-				TAGS.SASS,
-				TAGS.GIT,
-				TAGS.SQLSERVER,
-				TAGS.TYPESCRIPT,
-				TAGS.LARAVEL
-			],
+			tags: [TAGS.ANGULAR, TAGS.SASS, TAGS.GIT, TAGS.SQLSERVER, TAGS.TYPESCRIPT, TAGS.LARAVEL],
 			github: ''
 		}
 	]

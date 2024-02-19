@@ -5,26 +5,55 @@ import { Icon } from 'astro-icon/components'
 
 type Props = Project & {}
 
-const { image, title, description, tags } = Astro.props
+const { image, title, description, tags, previewUrl, github } = Astro.props
 ---
 
 <article class="relative isolate rounded-md border-4 border-neutral-900 bg-white">
-	<div class="relative flex flex-col px-5 py-6">
-		<div class="mb-4 overflow-hidden rounded md:mb-5 md:max-h-56">
+	<div class="relative flex h-full flex-col px-5 py-6">
+		<div class="mb-4 overflow-hidden rounded border md:mb-5 md:max-h-56">
 			<img src={image} alt={title} class="object-cover" loading="lazy" />
 		</div>
 		<div class="mb-4">
 			<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>
 			<p class="text-sm text-neutral-600 md:text-lg">{description}</p>
 		</div>
-		<footer class="flex flex-wrap gap-3">
-			{
-				tags.map((tag) => (
-					<Badge className={tag.className}>
-						<Icon name={tag.icon} /> {tag.name}
-					</Badge>
-				))
-			}
+		<footer class="flex flex-1 flex-col gap-5">
+			<div class="mb-auto flex flex-wrap gap-3">
+				{
+					tags.map((tag) => (
+						<Badge className={tag.className}>
+							<Icon name={tag.icon} /> {tag.name}
+						</Badge>
+					))
+				}
+			</div>
+			<div class="flex justify-end gap-3">
+				{
+					github && (
+						<a
+							href={github}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center gap-1 rounded border-2  border-neutral-900 bg-amber-200 px-3 py-0.5 text-xs shadow-sm"
+						>
+							<Icon name="github" class={'text-base'} /> Code
+						</a>
+					)
+				}
+
+				{
+					previewUrl && (
+						<a
+							href={previewUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center gap-1 rounded border-2  border-neutral-900 bg-amber-200 px-3 py-0.5 text-xs shadow-sm"
+						>
+							<Icon name="link" class={'text-base'} /> Preview
+						</a>
+					)
+				}
+			</div>
 		</footer>
 	</div>
 </article>

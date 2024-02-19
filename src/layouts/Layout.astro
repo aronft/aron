@@ -20,9 +20,16 @@ const { title, description } = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="./src/assets/star.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta property="og:url" content="https://arondev.vercel.app" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Aron - Portafolio como Desarrollador Full-Stack" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="" />
+
+		<slot name="head" />
 	</head>
 	<body class="">
 		<Container className="min-h-[100dvh] ">

@@ -41,16 +41,25 @@ const {} = Astro.props
 	</Container>
 </header>
 
-<style></style>
+<style>
+	header {
+		transition: background-color 200ms ease-in-out;
+	}
+</style>
 
 <script>
 	const header = document.querySelector('header')
 	const sections = document.querySelectorAll('section')
 	const navItems = document.querySelectorAll('nav ul li a')
 	let currentSection = 'experience'
+
+	if (window.scrollY >= 1) {
+		header?.classList.add('bg-white', 'border-b')
+	}
+
 	window.addEventListener('scroll', () => {
 		if (window.scrollY >= 1) {
-			header?.classList.add('bg-white', 'border-b', 'dark:bg-black')
+			header?.classList.add('bg-white', 'border-b')
 		} else {
 			header?.classList.remove('bg-white', 'border-b', 'bg-black')
 		}
