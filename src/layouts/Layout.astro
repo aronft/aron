@@ -28,6 +28,20 @@ const { title, description } = Astro.props
 		<meta property="og:title" content="Aron - Portafolio como Desarrollador Full-Stack" />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content="" />
+		<link
+			rel="preload"
+			href="/fonts/handlee-latin-400-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/fonts/inter-latin-400-normal.ttf"
+			as="font"
+			type="font/truetype"
+			crossorigin
+		/>
 
 		<slot name="head" />
 	</head>
