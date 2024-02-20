@@ -68,6 +68,10 @@ const TAGS = {
 	TAILWINDCSS: {
 		name: 'TailwindCSS',
 		icon: 'tailwindcss'
+	},
+	NODE: {
+		name: 'Node.js',
+		icon: 'nodejs'
 	}
 }
 
@@ -121,7 +125,7 @@ export const initialData: Data = {
 				'Herramienta que hace que la creación de posts sea más sencilla y efectiva. Usando IA',
 			image: '/projects/post-generator.webp',
 			previewUrl: 'https://ia-post-generator.vercel.app',
-			tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS],
+			tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS, TAGS.NODE],
 			github: 'https://github.com/aronft/ia-post-generator'
 		},
 		{
