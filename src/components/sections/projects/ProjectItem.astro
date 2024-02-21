@@ -10,12 +10,12 @@ const { image, title, description, tags, previewUrl, github } = Astro.props
 
 <article class="relative isolate rounded-md border-4 border-neutral-900 bg-white">
 	<div class="relative flex h-full flex-col px-5 py-6">
-		<div class="mb-4 overflow-hidden rounded border md:mb-5 md:max-h-56">
-			<img src={image} alt={title} class="object-cover" loading="lazy" />
+		<div class="mb-4 max-h-56 min-h-56 overflow-hidden rounded border md:mb-5">
+			<img src={image} alt={title} class="h-full w-full object-cover" loading="lazy" />
 		</div>
 		<div class="mb-4">
-			<h3 class="text-xl font-bold text-neutral-900 md:text-2xl">{title}</h3>
-			<p class="text-sm text-neutral-600 md:text-lg">{description}</p>
+			<h3 class="text-md font-bold text-neutral-900">{title}</h3>
+			<p class="text-base text-neutral-600">{description}</p>
 		</div>
 		<footer class="flex flex-1 flex-col gap-5">
 			<div class="mb-auto flex flex-wrap gap-3">
