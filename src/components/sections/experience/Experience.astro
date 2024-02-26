@@ -5,9 +5,15 @@ import ExperienceItem from './ExperienceItem.astro'
 const data = initialData.experiences
 import { cn } from '@/utils/class-name'
 import { Icon } from 'astro-icon/components'
+
+type Props = {
+	className?: string
+}
+
+const { className } = Astro.props
 ---
 
-<SectionLayout className="mb-36 " id="experience">
+<SectionLayout className={className} id="experience">
 	<header
 		class="mb-12 flex flex-row-reverse items-center justify-start gap-3 md:mb-20 md:gap-14 lg:justify-center"
 	>

@@ -1,19 +1,29 @@
 ---
 import Badge from '@/components/ui/badge/Badge.astro'
 import type { Project } from '@/constants/data'
+import { cn } from '@/utils/class-name'
 import { Icon } from 'astro-icon/components'
 
-type Props = Project & {}
+type Props = Project & {
+	className?: string
+}
 
-const { image, title, description, tags, previewUrl, github } = Astro.props
+const { image, title, description, tags, previewUrl, github, className } = Astro.props
 ---
 
-<article class="relative isolate rounded-md border-4 border-neutral-900 bg-white">
-	<div class="relative flex h-full flex-col px-5 py-6">
-		<div class="mb-4 max-h-56 min-h-56 overflow-hidden rounded border md:mb-5">
-			<img src={image} alt={title} class="h-full w-full object-cover" loading="lazy" />
-		</div>
-		<div class="mb-4">
+<article
+	class={cn('relative isolate flex flex-col gap-10 lg:gap-14 px-5 py-6 lg:flex-row', className)}
+>
+	<div class="lg:min-w-[35rem] lg:max-w-[35rem]">
+		<img
+			src={image}
+			alt={title}
+			class="aspect-video h-full w-full rounded border object-cover object-left-top shadow-md"
+			loading="lazy"
+		/>
+	</div>
+	<div class="flex flex-col gap-5">
+		<div class="flex flex-col gap-3">
 			<h3 class="text-md font-bold text-neutral-900">{title}</h3>
 			<p class="text-base text-neutral-600">{description}</p>
 		</div>
@@ -27,7 +37,7 @@ const { image, title, description, tags, previewUrl, github } = Astro.props
 					))
 				}
 			</div>
-			<div class="flex justify-end gap-3">
+			<div class="flex gap-3">
 				{
 					github && (
 						<a
@@ -40,7 +50,6 @@ const { image, title, description, tags, previewUrl, github } = Astro.props
 						</a>
 					)
 				}
-
 				{
 					previewUrl && (
 						<a
@@ -60,10 +69,10 @@ const { image, title, description, tags, previewUrl, github } = Astro.props
 
 <style>
 	article img {
-		transition: transform 500ms;
+		transition: transform 600ms;
 	}
 
-	article:hover img {
-		transform: scale(1.1);
+	article img:hover {
+		transform: scale(1.05);
 	}
 </style>

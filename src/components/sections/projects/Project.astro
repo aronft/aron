@@ -2,6 +2,7 @@
 import { initialData } from '@/constants/data'
 import ProjectItem from './ProjectItem.astro'
 import { Icon } from 'astro-icon/components'
+import { cn } from '@/utils/class-name'
 
 type Props = {}
 
@@ -10,26 +11,26 @@ const projects = initialData.projects
 const {} = Astro.props
 ---
 
-<section
-	id="projects"
-	data-section="projects"
-	class="mb-20 flex flex-col gap-3 lg:flex-row lg:justify-between lg:gap-16"
->
-	<header class="flex flex-row-reverse items-start gap-5 lg:flex-col lg:items-end lg:pt-28">
-		<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand text-lg">Proyectos</h2>
+<section id="projects" data-section="projects" class="mb-20 flex flex-col gap-3 lg:justify-between">
+	<header class="flex flex-col items-start gap-5">
+		<h2 class="text-stroke mb-3 inline-block bg-pink-200 font-hand text-xl">Proyectos</h2>
 		<Icon
 			name="arrow"
-			class="mb-5 h-6 w-9 translate-y-2 rotate-45 md:h-20 md:w-20 md:translate-y-0 lg:-rotate-45"
+			class="mb-5 h-6 w-9 translate-x-10 -rotate-45 md:h-20 md:w-20 md:translate-y-0"
 			aria-label={'arrow down'}
 		/>
 	</header>
-	<ul class="grid gap-5">
-		{projects.map((project) => <ProjectItem {...project} />)}
+	<ul class="grid grid-cols-1 gap-10">
+		{
+			projects.map((project, i) => (
+				<ProjectItem className={cn({ 'lg:flex-row-reverse': i % 2 !== 0 })} {...project} />
+			))
+		}
 	</ul>
 </section>
 
 <style>
 	ul {
-		grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+		/* grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr)); */
 	}
 </style>
