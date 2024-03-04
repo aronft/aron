@@ -112,7 +112,7 @@ export const initialData: Data = {
 			id: crypto.randomUUID(),
 			rangeDate: 'Dec 2019 - Dec 2020',
 			company: 'Universidad Nacional de Moquegua',
-			position: 'Full-stack Developer',
+			position: 'Frontend Developer',
 			description:
 				'Participé activamente en el desarrollo de aplicaciones web administrativas, entre las cuales se destacan proyectos como CCTIC (Centro de Capacitación en TIC) y CEID (Centro de Idiomas)'
 		}
