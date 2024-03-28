@@ -144,7 +144,7 @@ export const initialData: Data = {
 			description:
 				'Plataforma para gestionar eficientemente la administración académica de idiomas, facilitando inscripciones, evaluaciones, asistencias, certificados, facilitando el seguimiento del desarrollo académico.',
 			image: '/projects/ceid.jpg',
-			previewUrl: '',
+			previewUrl: 'https://www.sigeun.unam.edu.pe/modulos/ceid',
 			tags: [TAGS.ANGULAR, TAGS.SASS, TAGS.GIT, TAGS.SQLSERVER, TAGS.TYPESCRIPT, TAGS.LARAVEL],
 			github: ''
 		},
@@ -154,7 +154,7 @@ export const initialData: Data = {
 			description:
 				'Software para la gestión académica en el Centro de Capacitación en TIC, simplificando las inscripciones, monitoreo del avance y generacion de certificados y gestión de planes académicos.',
 			image: '/projects/cctic.jpg',
-			previewUrl: '',
+			previewUrl: 'https://www.sigeun.unam.edu.pe/modulos/modcctic',
 			tags: [TAGS.ANGULAR, TAGS.SASS, TAGS.GIT, TAGS.SQLSERVER, TAGS.TYPESCRIPT, TAGS.LARAVEL],
 			github: ''
 		}
