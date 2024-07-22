@@ -28,10 +28,10 @@ const { className } = Astro.props
 			aria-label={'arrow down'}
 		/>
 		<p class="mb-8 mt-auto max-w-44 translate-y-8 md:max-w-none md:translate-y-16 md:text-2xl">
-			2 años de Experiencia
+			3 años de Experiencia
 		</p>
 	</header>
-	<ol class="lg:ml-auto">
+	<ol class="relative lg:ml-auto">
 		{
 			data.map((item, index) => (
 				<ExperienceItem
@@ -43,6 +43,7 @@ const { className } = Astro.props
 					{...item}
 					isFirst={index === 0}
 					index={index}
+					isLast={index === data.length - 1}
 				/>
 			))
 		}

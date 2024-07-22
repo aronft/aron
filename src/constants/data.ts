@@ -67,7 +67,8 @@ const TAGS = {
 	},
 	TAILWINDCSS: {
 		name: 'TailwindCSS',
-		icon: 'tailwindcss'
+		icon: 'tailwindcss',
+		className: 'bg-amber-200'
 	},
 	NODE: {
 		name: 'Node.js',

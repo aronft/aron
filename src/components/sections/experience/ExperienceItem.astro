@@ -6,6 +6,7 @@ interface Props extends Experience {
 	className?: string
 	isFirst?: boolean
 	index: number
+	isLast?: boolean
 }
 
 const validColorsClasses: Record<number, string> = {
@@ -14,7 +15,7 @@ const validColorsClasses: Record<number, string> = {
 	2: 'bg-amber-200'
 }
 
-const { company, description, position, rangeDate, className, isFirst, index } = Astro.props
+const { company, description, position, rangeDate, className, isFirst, index, isLast } = Astro.props
 ---
 
 <li>
@@ -22,7 +23,8 @@ const { company, description, position, rangeDate, className, isFirst, index } =
 		<div
 			class={cn(
 				' flex flex-col sm:justify-center items-center gap-3 px-3 py-12 text-center sm:flex-row-reverse sm:text-left sm:gap-16 md:gap-20 md:px-10 md:py-14 lg:pl-28 lg:w-4/5 lg:ml-auto',
-				className
+				className,
+				{ 'pb-14 md:pb-16 ': isLast }
 			)}
 		>
 			<span
@@ -35,6 +37,7 @@ const { company, description, position, rangeDate, className, isFirst, index } =
 			>
 				{rangeDate}
 			</span>
+
 			<span
 				class={cn(
 					'flex h-14 min-w-14 items-center justify-center rounded-full ',
@@ -49,6 +52,20 @@ const { company, description, position, rangeDate, className, isFirst, index } =
 					<span class="font-bold">{company}</span>
 				</h3>
 				<p class="text-base text-neutral-600">{description}</p>
+				{
+					isLast && (
+						<a
+							target="_blank"
+							href="/Curriculum_Aron_Flores_frontend_developer.pdf"
+							rel="noopener noreferrer"
+							class={cn(
+								'absolute left-1/2 top-full ml-0  block -translate-x-1/2 -translate-y-1/2 rounded   border-2 border-black bg-pink-200  p-3 px-8 text-base font-medium shadow-sm shadow-neutral-900   hover:bg-pink-400 md:text-2xl lg:ml-28'
+							)}
+						>
+							Ver CV Completo
+						</a>
+					)
+				}
 			</div>
 		</div>
 	</div>
