@@ -95,6 +95,13 @@ export const initialData: Data = {
 	experiences: [
 		{
 			id: crypto.randomUUID(),
+			rangeDate: 'Apr 2024 - Nov 2024',
+			company: 'Gerencia Regional de Educación de Moquegua ',
+			position: 'Programador',
+			description: `Desarrollé un banco de preguntas para la gestión estructurada de evaluaciones y funcionalidades para su administración en el aula virtual. Además, participé en la definición de la arquitectura frontend, asegurando una estructura modular y escalable.`
+		},
+		{
+			id: crypto.randomUUID(),
 			rangeDate: 'Apr 2022 - Jun 2022',
 			company: 'jqsystem',
 			position: 'Programador full stack',
